@@ -91,26 +91,66 @@ Right click an empty section of the Diagram, click "Add IP...", and search for "
 
 Double-click the buffer to open its configuration. Select `BUFG` under "C Buf Type".
 
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/68673ad3-9c14-4837-a9e9-022c50581f69)
+
 Connect `CPU_RESETN` to the mig's `sys_rst` port. Connect the `CLK100MHZ` to the `BUFG_I` port and the `BUFG_O` to the mig's `sys_clk_i` port. You should have something like the image below.
 
 ![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/08391ebd-5b73-4b0d-acc1-63578a19e301)
 
 ## Clocking Wizard
 
-Right click an empty section of the Diagram, click "Add IP...", and search for "clocking". Double-click on "Clocking Wizard" to add it to the diagram.Double-click the Clocking Wizard to open its configuration.
+Right click an empty section of the Diagram, click "Add IP...", and search for "clocking". Double-click on "Clocking Wizard" to add it to the diagram. Double-click the Clocking Wizard to open its configuration.
 
 Go to the "Clocking Options" tab, scroll over and down if needed and select `No buffer` for the Source of Primary
 
 ![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/db7939bb-a41f-43f4-9b60-46b71bbf79ca)
 
-Go to the "Output Clocks" tab, enable 2 clocks and set both of them to 200MHz. `clk_out1` will be for the MicroBlaze and all other stuff. `clk_out2` is for the MIG.
+Go to the "Output Clocks" tab, enable 2 clocks. `clk_out1` will be for the MicroBlaze and peripherals, set this to 100MHz. `clk_out2` is for the MIG, set this to 200MHz.
 
 Scroll down if needed and set Reset Type to `Active Low`.
 
-![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/a561c957-5023-46dd-8534-a87f0069493c)
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/0a6437eb-1140-4215-bf40-1bdd06c379bd)
 
 Connect `clk_in1` to the buffer's `BUFG_O`, `CLK_out2` to the mig's `clk_ref_i`, `resetn` to the `CPU_RESETN` port like the image below.
 
-![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/60ed167a-88cd-4304-aa33-8c370f4a91c9)
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/7da42770-5c0f-4e67-b5c7-1bcd5eb5d3b0)
 
+## USB uart
 
+Find your "Board" window, then find the `USB_UART` connection and drag it into an empty section of the block design diagram. It will create its own port to usb_uart.
+
+## MicroBlaze
+
+Right click an empty section of the Diagram, click "Add IP...", and search for "micro". Double-click on "MicroBlaze" to add it to the diagram.
+
+Click on the "Run Block Automation" in the green bar across the top of the diagram to open the MicroBlaze configuration.
+
+Select the `Real-time` Preset. Make sure the Peripheral AXI Port is Enabled, and disable the Interrupt Controller.
+
+The Clock Connection should be set to `/clk_wiz_0/clk_out1`.
+
+Click OK and everything is going to get wired up.
+
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/09b167bf-80de-44b3-9d14-c1247f62f8a0)
+
+Double-click the microblaze to open its configuration. Click next to get to page 4 "Cache".
+
+Set the Instruction Cache to 16 kB and Data Cache to 32kB. Line Length and Number of Victims to 8 for both caches.
+
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/6d942319-5c0d-43b0-acdb-ab89eb151881)
+
+Click Next to go to page 5 "Debug". Set Number of Read Address Watchpoints to 1(this is to make debugging easier).
+
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/3da1e1ac-850d-407d-a21e-3ee52d1d49dd)
+
+Run Block Automation. Select all Automation when the window pops up.
+
+## Generating Bitstream
+
+Validate Design.
+
+Find the Sources window and right click on system.bd and click "Create HDL Wrapper", and select "Let Vivado managa wrapper and auto-update" in the pop up.
+
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/7f4ee05a-3e28-49f4-b818-a2537a841b6f)
+
+Generate Bitstream. this will likely take a moment.
