@@ -145,12 +145,18 @@ Click Next to go to page 5 "Debug". Set Number of Read Address Watchpoints to 1(
 
 Run Block Automation. Select all Automation when the window pops up.
 
-## Generating Bitstream
+## Generating Bitstream and Exporting Hardware Design
 
-Validate Design.
+Validate Design. with the small checkbox icon on the top bar of the block diagram window.
+
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/07871ac8-b2a8-40fc-b83e-b42d221f42ff)
 
 Find the Sources window and right click on system.bd and click "Create HDL Wrapper", and select "Let Vivado managa wrapper and auto-update" in the pop up.
 
-![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/7f4ee05a-3e28-49f4-b818-a2537a841b6f)
-
 Generate Bitstream. this will likely take a moment.
+
+Export the hardware design from the drop down menu on the toolbar. It's under File->Export->Export Hardware.
+
+Make sure to check the box to include your bitstream, Note where the `.xsa` file will be placed(default is project root folder) and finish the export.
+
+From here, you're ready to head into Vitis.
