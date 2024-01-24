@@ -16,11 +16,11 @@ Next create a platform component(toolbar at File|New Compenent|Platform).
 
 Decide on the name of your platform and then click next to the Flow screen. Select `Browse` and select the `.xsa` created in the [Vivado MicroBlaze Setup](https://github.com/THE9rtyt/microblaze_phys333/blob/main/setup.md).
 
-#TODO: image of Flow screen
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/0dcafa34-db50-497b-9b40-079f8b65837e)
 
 It is normal for the next page to take a moment to parse the data from hardware we just gave it. On the next page, select `standalone` and `microblaze_0`.
 
-#TODO: image of OS and Processor screen
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/ce60670a-21f0-457e-9239-412ae3439292)
 
 Click next and then finish to complete your platform setup.
 
@@ -29,13 +29,13 @@ Finally, we will build the platform.
 To the build/run/debug control are found under the `FLOW` panel. Click build.
 - To find this panel you might have to enable the drop down and pull up on the top edge to see the panel. See image below for more detail.
 
-#TODO: image of Vitis with Flow panel pulled up and outlined.
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/cdd93c08-e2da-4f11-9fb5-f515af7f8a3e)
 
 ## hello_world application
 
 Next create an application from an example application. Find the examples on the left edge of Vitis with the icon below.
 
-#TODO: image of example icon
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/a1911cfa-0a64-4bdd-b32e-eb52edd3d295)
 
 Find and click the example named `Hello World`. Then click `Create Application Component from Template`, this will pop up a setup window.
 
@@ -43,7 +43,7 @@ Click next through the pages, nothing should need to be changed here, leave the 
 
 Find and click `helloworld.c` on the left sidebar under hello_world -> Sources -> helloworld.c.
 
-#TODO: picture of Vitis with helloworld.c open
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/7e164db3-7c72-40f8-8059-f82fa7fb6d69)
 
 ## Running hello_world
 
