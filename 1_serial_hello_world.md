@@ -41,14 +41,22 @@ Find and click the example named `Hello World`. Then click `Create Application C
 
 Click next through the pages, nothing should need to be changed here, leave the name and location defaults. Select your newly made platform on the hardware page, and click next until the windows closes. 
 
-Find and click `helloworld.c` on the left sidebar under hello_world -> Sources -> helloworld.c.
+Find and click `helloworld.c` on the left sidebar under hello_world -> Sources -> helloworld.c to open up the code of our new application.
 
 ![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/7e164db3-7c72-40f8-8059-f82fa7fb6d69)
 
+It's a simple program that just prints 2 lines into a serial port with a baudrate of 9600.
+
 ## Running hello_world
 
-The hello_world application will be ready to build immidietly under the Flow panel. After that completes, click debug to load the cpu and execute the program on your fpga.
+The hello_world application will be ready to build immidietly under the flow panel. After that completes, click debug to load the cpu and execute the program on your fpga.
 
 After it loads the fpga, the debug view will pull itself up. from here you should also see your helloworld.c again and the cpu will be paused at the beginning of `main()`.
 
 #TODO: picture of debug view paused on first line of app.
+
+Across the top of the debug view we find our processor execution controls and can hit the first blue button like below to have our microblaze cpu run our application.
+
+#TODO: image of continue button.
+
+It will send in the 2 serial messages to a listening serial monitor. I used PuTTY myself but any serial monitor like the one in Arduino IDE should work. Make sure to set your baudrate to 9600!
