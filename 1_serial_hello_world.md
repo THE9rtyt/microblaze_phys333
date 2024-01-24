@@ -53,10 +53,10 @@ The hello_world application will be ready to build immidietly under the flow pan
 
 After it loads the fpga, the debug view will pull itself up. from here you should also see your helloworld.c again and the cpu will be paused at the beginning of `main()`.
 
-#TODO: picture of debug view paused on first line of app.
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/ce5c03e6-7a69-497b-b7fd-88ee121134cf)
 
 Across the top of the debug view we find our processor execution controls and can hit the first blue button like below to have our microblaze cpu run our application.
 
-#TODO: image of continue button.
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/49685b32-a4ec-4d00-8a46-d0331723cd00)
 
 It will send in the 2 serial messages to a listening serial monitor. I used PuTTY myself but any serial monitor like the one in Arduino IDE should work. Make sure to set your baudrate to 9600!
