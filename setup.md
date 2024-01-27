@@ -57,7 +57,7 @@ Set the "System Clock" option to `No Buffer`
 
 Click next until you finish the MIG configuration.
 
-- You will have to click "Validate" to enable the next button on the "Pin Slection" page and accept the license on the "Simulation Options" page.
+- You will have to click "Validate" to enable the next button on the "Pin Selection" page and accept the license on the "Simulation Options" page.
 
 ## Configuring Ports
 
@@ -147,13 +147,13 @@ Run Block Automation. Select all Automation when the window pops up.
 
 ## Generating Bitstream and Exporting Hardware Design
 
-Validate Design. with the small checkbox icon on the top bar of the block diagram window.
+'Validate Design' by clicking the small checkbox icon on the top bar of the block diagram window.
 
 ![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/07871ac8-b2a8-40fc-b83e-b42d221f42ff)
 
 Find the Sources window and right click on system.bd and click "Create HDL Wrapper", and select "Let Vivado managa wrapper and auto-update" in the pop up.
 
-Generate Bitstream. this will likely take a moment.
+Generate Bitstream. this will likely take a moment (or 20 minutes?).
 
 Export the hardware design from the drop down menu on the toolbar. It's under File->Export->Export Hardware.
 
