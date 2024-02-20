@@ -148,7 +148,7 @@ Select the `Real-time` Preset. Make sure the Peripheral AXI Port is Enabled, and
 
 The Clock Connection should be set to `/clk_wiz_0/clk_out1`.
 
-![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/09b167bf-80de-44b3-9d14-c1247f62f8a0)
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/dac6a1f0-6356-4a3f-861a-cdead6da03b9)
 
 Click OK and everything is going to get wired up, if everything has gone well it should look like the diagram below.
 
